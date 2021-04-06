@@ -53,7 +53,7 @@ for e in noreleases:
   print(e)
 
 if updateflag:
-  print('::set-output name=isupdated::true')
+  print('::set-output name=IS_UPDATED::true')
   outF = open(filepath, "w")
   for e in modified:
     outF.write(e)
