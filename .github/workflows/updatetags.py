@@ -34,7 +34,7 @@ with open(filepath) as fp:
         if(islatest):
           print("This tag is the latest\n")
         else:
-          line = '\t\ttag_version="{}"\n'.format(tag_version)
+          line = '\ttag_version="{}"\n'.format(tag_version)
           print("Tag name updated from {} to {}: \n".format(l[13:-1],tag_version))
           updateflag=True
         
