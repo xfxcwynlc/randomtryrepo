@@ -1,4 +1,4 @@
-name: "Weekly Tags_version Vhecks"
+name: "Test Pull Request"
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
@@ -10,14 +10,14 @@ on:
 jobs:        
   CreatePullRequest:
     runs-on: ubuntu-latest
-    needs: updateTags
+    needs: updateAnyFiles
     if: ${{ needs.updateTags.outputs.isUpdated }}
     steps:
       - uses: actions/checkout@v2
       - name: Add random file
         run: |
         ls -al > log.txt
-      - name: Create Pull Request When common_functions.sh Changes
+      - name: Create Pull Request When log.txt being added
         uses: peter-evans/create-pull-request@v3
         with:
           title: Update common_functions.sh
