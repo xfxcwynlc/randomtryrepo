@@ -20,6 +20,14 @@ jobs:
         run: |
           echo "::set-output name=is_updated::true"
           python3 ./.github/workflows/updatetags.py ./common_functions.sh
+          
+      - name: Add & Commit
+        uses: EndBug/add-and-commit@v7.1.1
+        with: 
+          author_name: github-actions
+          author_email: 41898282+github-actions[bot]@users.noreply.github.com
+          message: 'Adds updated common_functions.sh to new branch'
+          branch: commontag
         
           
   CreatePullRequest:
